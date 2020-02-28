@@ -7,215 +7,215 @@ import org.junit.jupiter.api.Test;
 class SimpleListTest {
 
 	// Testing constructor SimpleList() on creating a list. Test should Succeed.
-		@Test
-		void testSimpleList1() {
-			SimpleList test = new SimpleList();
-			assertNotNull(test);
-		}
+	@Test
+	void testSimpleList1() {
+		SimpleList test = new SimpleList();
+		assertNotNull(test);
+	}
 		
-		// Testing add() method on adding over the limit of 10 elements. Test should Succeed.
-		@Test
-		void testAdd1() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.add(8);
-			test.add(9);
-			test.add(10);
-			test.add(11);
-			assertEquals("11 10 9 8 7 6 5 4 3 2 1", test.toString());
-		}
+	// Testing add() method on adding over the limit of 10 elements. Test should Succeed.
+	@Test
+	void testAdd1() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		test.add(11);
+		assertEquals("11 10 9 8 7 6 5 4 3 2 1", test.toString());
+	}
 		
-		// Testing add() method on adding 10 unique elements in the list. Test should Succeed.
-		@Test
-		void testAdd2() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.add(8);
-			test.add(9);
-			test.add(10);
-			assertEquals("10 9 8 7 6 5 4 3 2 1", test.toString());
-		}
+	// Testing add() method on adding 10 unique elements in the list. Test should Succeed.
+	@Test
+	void testAdd2() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		assertEquals("10 9 8 7 6 5 4 3 2 1", test.toString());
+	}
 		
-		// Testing add() method on adding same element to the list. Test should Fail.
-		// Reason: Adding duplicates is entirely possible on the list.
-		@Test
-		void testAdd3() {
-			SimpleList test = new SimpleList();
-			test.add(5);
-			test.add(5);
-			assertEquals("5", test.toString());
-		}
+	// Testing add() method on adding same element to the list. Test should Fail.
+	// Reason: Adding duplicates is entirely possible on the list.
+	@Test
+	void testAdd3() {
+		SimpleList test = new SimpleList();
+		test.add(5);
+		test.add(5);
+		assertEquals("5", test.toString());
+	}
 		
-		// Testing remove() method on removing a single element from a full list. Test should Succeed.
-		@Test
-		void testRemove1() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.remove(3);
-			assertEquals("2 1", test.toString());
-		}
+	// Testing remove() method on removing a single element from a full list. Test should Succeed.
+	@Test
+	void testRemove1() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.remove(3);
+		assertEquals("2 1", test.toString());
+	}
 		
-		// Testing remove() method on removing an element when a duplicate exists. Test should Fail.
-		// Reason: remove() only removes the first instance of an element, not all instances.
-		@Test
-		void testRemove2() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.add(3);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.add(8);
-			test.add(9);
-			test.add(10);
-			test.remove(3);
-			assertEquals("10 9 8 7 6 5 2 1", test.toString());
-		}
+	// Testing remove() method on removing an element when a duplicate exists. Test should Fail.
+	// Reason: remove() only removes the first instance of an element, not all instances.
+	@Test
+	void testRemove2() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(3);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		test.remove(3);
+		assertEquals("10 9 8 7 6 5 2 1", test.toString());
+	}
 
-		// Testing count() method for simple addition of element. Test should Succeed.
-		@Test
-		void testCount1() {
-			SimpleList test = new SimpleList();
-			test.add(4);
-			assertEquals(1, test.count());
-		}
+	// Testing count() method for simple addition of element. Test should Succeed.
+	@Test
+	void testCount1() {
+		SimpleList test = new SimpleList();
+		test.add(4);
+		assertEquals(1, test.count());
+	}
 		
-		// Testing count() method for adding 11 elements, despite list limit of 10. Test should Succeed
-		@Test
-		void testCount2() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.add(8);
-			test.add(9);
-			test.add(10);
-			test.add(11);
-			assertEquals(11, test.count());
-		}
+	// Testing count() method for adding 11 elements, despite list limit of 10. Test should Succeed
+	@Test
+	void testCount2() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		test.add(11);
+		assertEquals(11, test.count());
+	}
 
-		// Testing toString() method on simple message printing. Test should Succeed.
-		@Test
-		void testToString1() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			assertEquals("5 4 3 2 1", test.toString());
-		}
+	// Testing toString() method on simple message printing. Test should Succeed.
+	@Test
+	void testToString1() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		assertEquals("5 4 3 2 1", test.toString());
+	}
 		
-		// Testing toString() method on empty message printing. Test should Succeed.
-		@Test
-		void testToString2() {
-			SimpleList test = new SimpleList();
-			assertEquals("", test.toString());
-		}
+	// Testing toString() method on empty message printing. Test should Succeed.
+	@Test
+	void testToString2() {
+		SimpleList test = new SimpleList();
+		assertEquals("", test.toString());
+	}
 		
-		// Testing toString() method on printing a list that had its elements altered. Test should Succeed.
-		@Test
-		void testToString3() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.add(8);
-			test.add(9);
-			test.add(10);
-			test.add(11);
-			assertEquals("11 10 9 8 7 6 5 4 3 2 1", test.toString());
-		}
+	// Testing toString() method on printing a list that had its elements altered. Test should Succeed.
+	@Test
+	void testToString3() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		test.add(11);
+		assertEquals("11 10 9 8 7 6 5 4 3 2 1", test.toString());
+	}
 		
-		// Testing search() for simple index location. Test should Succeed.
-		@Test
-		void testSearch1() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.add(8);
-			assertEquals(1, test.search(7));
-		}
+	// Testing search() for simple index location. Test should Succeed.
+	@Test
+	void testSearch1() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		assertEquals(1, test.search(7));
+	}
 		
-		// Testing search() for element that doesn't exist. Test should Succeed.
-		@Test
-		void testSearch2() {
-			SimpleList test = new SimpleList();
-			test.add(2);
-			test.add(2);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.add(8);
-			assertEquals(-1, test.search(1));
-		}
+	// Testing search() for element that doesn't exist. Test should Succeed.
+	@Test
+	void testSearch2() {
+		SimpleList test = new SimpleList();
+		test.add(2);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		assertEquals(-1, test.search(1));
+	}
 		
-		// Testing search() for an element present twice in the list. Test should Fail.
-		// Reason: search() will obtain only the first instance of the element in the list.
-		@Test
-		void testSearch3() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(1);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.add(8);
-			test.add(9);
-			test.add(10);
-			assertEquals(9, test.search(1));
-		}
+	// Testing search() for an element present twice in the list. Test should Fail.
+	// Reason: search() will obtain only the first instance of the element in the list.
+	@Test
+	void testSearch3() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(1);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		assertEquals(9, test.search(1));
+	}
 
-		// Testing append
-		@Test
-		void testAppend1() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.add(8);
-			test.add(9);
-			test.add(10);
-			test.append(11);
-			assertEquals("10 9 8 7 6 5 4 3 2 1 11", test.toString());
-		}
+	// Testing append
+	@Test
+	void testAppend1() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		test.append(11);
+		assertEquals("10 9 8 7 6 5 4 3 2 1 11", test.toString());
+	}
 
 	// Testing if value is passing through
 	@Test
@@ -301,17 +301,17 @@ class SimpleListTest {
 	}
 	
 	// Testing reduction
-		@Test
-		void testSize5() {
-			SimpleList test = new SimpleList();
-			test.add(1);
-			test.add(2);
-			test.add(3);
-			test.add(4);
-			test.add(5);
-			test.add(6);
-			test.add(7);
-			test.remove(7);
-			assertEquals(7, test.size());
-		}
+	@Test
+	void testSize5() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.remove(7);
+		assertEquals(7, test.size());
+	}
 }

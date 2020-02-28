@@ -79,11 +79,6 @@ public class SimpleList {
 	 * which will decrease the count.
 	 * @param value This is the requested integer to be removed from the list.
 	 */
-	/** 
-	 * Method to remove first instance of the requested integer value from list, 
-	 * which will decrease the count.
-	 * @param value This is the requested integer to be removed from the list.
-	 */
 	public void remove(int value)
 	{
 		int index = search(value);
@@ -177,6 +172,7 @@ public class SimpleList {
 		
 		return index;
 	}
+	
 	
 	/**
 	 * Method to add integer value into end of list, which will increase the count.
