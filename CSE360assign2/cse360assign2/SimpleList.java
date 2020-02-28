@@ -50,16 +50,35 @@ public class SimpleList {
 	{
 		count++;
 		
+		if (count > list.length) // Will create temporary list to copy elements and enlarge list
+		{
+			int tempList[] = new int[list.length];
+			for (int pos = 0; pos < list.length; pos++)
+			{
+				tempList[pos] = list[pos];
+			}
+			
+			int size = (list.length * 3) / 2;
+			list = new int[size];
+			for (int pos = 0; pos < tempList.length; pos++)
+			{
+				tempList[pos] = list[pos];
+			}
+		}
+		
 		for (int looper = count-1; looper > 0; looper--)
 		{
 			list[looper] = list[looper-1];
 		}
 		list[0] = value;
-		
-		count--;
 	}
 	
 	
+	/** 
+	 * Method to remove first instance of the requested integer value from list, 
+	 * which will decrease the count.
+	 * @param value This is the requested integer to be removed from the list.
+	 */
 	/** 
 	 * Method to remove first instance of the requested integer value from list, 
 	 * which will decrease the count.
@@ -76,6 +95,33 @@ public class SimpleList {
 				list[looper] = list[looper+1];
 			}
 			count--;
+		}
+		
+		int emptySpace = list.length - count;
+		if (emptySpace > (list.length / 4)) // Create temporary list for reduction (not below 1)
+		{
+			int tempList[] = new int[count];
+			for (int pos = 0; pos < count; pos++)
+			{
+				tempList[pos] = list[pos];
+				
+				System.out.println(tempList[pos]);				
+			}
+
+			int size = (list.length * 3) / 4;
+			
+			if (size >= 1)
+			{
+				list = new int[size];
+				for (int pos = 0; pos < tempList.length; pos++)
+				{
+					tempList[pos] = list[pos];
+				}
+			}
+			else
+			{
+				list = new int[1];
+			}
 		}
 	}
 	
