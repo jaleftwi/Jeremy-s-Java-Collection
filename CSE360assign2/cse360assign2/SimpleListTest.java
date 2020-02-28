@@ -311,7 +311,36 @@ class SimpleListTest {
 		test.add(5);
 		test.add(6);
 		test.add(7);
-		test.remove(7);
-		assertEquals(7, test.size());
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		test.add(11);
+		test.add(12);
+		System.out.println(test.toString());
+		test.remove(12);
+		assertEquals(12, test.size());
+	}
+
+	// Testing reduction 25%
+	@Test
+	void testSize6() {
+		SimpleList test = new SimpleList();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		test.add(11);
+		test.add(12);
+		test.remove(12);
+		test.remove(11);
+		test.remove(10);
+		test.remove(9);
+		assertEquals(12, test.size());
 	}
 }

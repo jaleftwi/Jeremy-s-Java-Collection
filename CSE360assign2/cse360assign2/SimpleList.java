@@ -85,7 +85,7 @@ public class SimpleList {
 		
 		if(index != -1)
 		{
-			for (int looper = index; looper < 9; looper++)
+			for (int looper = index; looper < count-1; looper++)
 			{
 				list[looper] = list[looper+1];
 			}
@@ -98,12 +98,10 @@ public class SimpleList {
 			int tempList[] = new int[count];
 			for (int pos = 0; pos < count; pos++)
 			{
-				tempList[pos] = list[pos];
-				
-				System.out.println(tempList[pos]);				
+				tempList[pos] = list[pos];				
 			}
 
-			int size = (list.length * 3) / 4;
+			int size = ((list.length * 3) / 4) + 1;
 			
 			if (size >= 1)
 			{
