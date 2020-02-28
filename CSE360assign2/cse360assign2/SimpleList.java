@@ -183,6 +183,72 @@ public class SimpleList {
 	 * If the array needs to be enlarged, the array size will increase by 50%
 	 * @param value This is the requested integer to be added into the list.
 	 */
+	public void append(int value)
+	{
+		count++;
+		if (count > list.length) // Will create temporary list to copy elements and enlarge list
+		{
+			int tempList[] = new int[list.length];
+			for (int pos = 0; pos < list.length; pos++)
+			{
+				tempList[pos] = list[pos];
+			}
+			
+			int size = (list.length * 3) / 2;
+			list = new int[size];
+			for (int pos = 0; pos < tempList.length; pos++)
+			{
+				tempList[pos] = list[pos];
+			}
+		}
+		
+		list[count-1] = value;
+	}
+	
+	
+	/**
+	 * Method to obtain the first value of the list.
+	 * @return first The first element of the list.
+	 */
+	public int first()
+	{
+		int first = -1;
+		
+		if (count > 1)
+		{
+			first = list[0];
+		}
+		
+		return first;
+	}
+	
+	
+	/**
+	 * Method to obtain the last value of the list.
+	 * @return last The last element of the list.
+	 */
+	public int last()
+	{
+		int last = -1;
+		
+		if (count > 1)
+		{
+			last = list[count-1];
+		}
+		
+		return last;
+	}
+	
+	
+	/**
+	 * Method to obtain the current available space that can be used in the list.
+	 * @return size The current number of values that can be held in the list
+	 */
+	public int size()
+	{
+		int size = list.length;
+		return size;
+	}
 
 } // end of SimpleList class
 
