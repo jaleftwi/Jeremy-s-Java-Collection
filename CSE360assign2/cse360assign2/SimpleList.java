@@ -62,7 +62,7 @@ public class SimpleList {
 			list = new int[size];
 			for (int pos = 0; pos < tempList.length; pos++)
 			{
-				tempList[pos] = list[pos];
+				list[pos] = tempList[pos];
 			}
 		}
 		
@@ -115,7 +115,7 @@ public class SimpleList {
 				list = new int[size];
 				for (int pos = 0; pos < tempList.length; pos++)
 				{
-					tempList[pos] = list[pos];
+					list[pos] = tempList[pos];
 				}
 			}
 			else
@@ -198,7 +198,7 @@ public class SimpleList {
 			list = new int[size];
 			for (int pos = 0; pos < tempList.length; pos++)
 			{
-				tempList[pos] = list[pos];
+				list[pos] = tempList[pos];
 			}
 		}
 		
